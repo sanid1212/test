@@ -1,1 +1,34 @@
+<html>
+<head>
+    <title>ActiveX HTTP Request Example</title>
+    <script type="text/vbscript">
+        ' Function to send HTTP request and capture response using ActiveX
+        Sub SendHTTPRequest
+            ' Create the ActiveX object for sending HTTP requests
+            Set http = CreateObject("MSXML2.XMLHTTP")
+            
+            ' Define the target URL (replace with the URL of the application you're testing)
+            url = "http://example.com/api"
+
+            ' Open an HTTP GET request
+            http.Open "GET", url, False
+            
+            ' Send the request
+            http.Send
+            
+            ' Capture the response
+            responseText = http.responseText
+            MsgBox "Response Received: " & responseText
+            
+            ' Manipulate the request (for example, changing parameters in a POST request)
+            ' You can send a modified request here, or manipulate the response data.
+            Set http = Nothing
+        End Sub
+    </script>
+</head>
+<body>
+    <h2>ActiveX HTTP Request Example</h2>
+    <button onclick="SendHTTPRequest">Send Request</button>
+</body>
+</html>
 
